@@ -1,0 +1,99 @@
+---
+import Hero from "../components/Hero.astro";
+import Trabajos from "../components/Trabajos.astro";
+import Criticas from "../components/Criticas.astro";
+import Contact from "../components/Contact.astro";
+import { siteConfig } from "../config";
+import "../styles/global.css";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={siteConfig.description} />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={`${siteConfig.name} - ${siteConfig.title}`} />
+    <meta property="og:description" content={siteConfig.description} />
+    <meta property="og:type" content="website" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    
+    <title>{siteConfig.name} - {siteConfig.title}</title>
+    
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #000;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white antialiased">
+    
+    <!-- Navigation (minimal, fixed) -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/5">
+      <div class="container mx-auto px-8 py-4 flex items-center justify-between">
+        <a href="#hero" class="text-white font-bold tracking-tight">
+          JN
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#trabajos" class="text-white/60 hover:text-white transition-colors text-sm tracking-wide">Trabajos</a>
+          <a href="#criticas" class="text-white/60 hover:text-white transition-colors text-sm tracking-wide">Críticas</a>
+          <a href="#contacto" class="text-white/60 hover:text-white transition-colors text-sm tracking-wide">Contacto</a>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden text-white/60 hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-white/5">
+        <div class="container mx-auto px-8 py-4 flex flex-col gap-4">
+          <a href="#trabajos" class="text-white/60 hover:text-white transition-colors text-sm tracking-wide">Trabajos</a>
+          <a href="#criticas" class="text-white/60 hover:text-white transition-colors text-sm tracking-wide">Críticas</a>
+          <a href="#contacto" class="text-white/60 hover:text-white transition-colors text-sm tracking-wide">Contacto</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <Hero />
+      <Trabajos />
+      <Criticas />
+      <Contact />
+    </main>
+
+    <script>
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuBtn?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+      });
+      
+      // Close menu on link click
+      mobileMenu?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu?.classList.add('hidden');
+        });
+      });
+    </script>
+  </body>
+</html>
