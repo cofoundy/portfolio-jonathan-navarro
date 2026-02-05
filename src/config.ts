@@ -19,7 +19,7 @@ export const siteConfig = {
     email: "j.navarro.macuri@gmail.com",
     phone: "+51 913036471",
     linkedin: "https://linkedin.com/in/jonathan-navarro-macurí",
-    itch: "https://democrates-n.itch.io/",
+    itch: "https://itch.io/profile/jonathan-navarro",
   },
 
   aboutMe:
