@@ -1,0 +1,43 @@
+backend:
+  name: git-gateway
+  repo: cofoundy/portfolio-jonathan-navarro
+  branch: main
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/SITE-ID/pkce
+  auth_token_endpoint: /sites/SITE-ID/token
+  gateway_url: https://gateway.decapbridge.com
+
+site_url: https://jonathannavarrom.lat
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "criticas-videojuegos"
+    label: "Críticas de Videojuegos"
+    folder: "src/content/blog"
+    create: true
+    slug: "videojuegos-{{slug}}"
+    filter: { field: "category", value: "videojuegos" }
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "string" }
+      - { label: "Fecha", name: "pubDate", widget: "datetime" }
+      - { label: "Categoría", name: "category", widget: "hidden", default: "videojuegos" }
+      - { label: "Imagen", name: "heroImage", widget: "image", required: false }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "criticas-cine"
+    label: "Críticas de Cine"
+    folder: "src/content/blog"
+    create: true
+    slug: "cine-{{slug}}"
+    filter: { field: "category", value: "cine" }
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "string" }
+      - { label: "Fecha", name: "pubDate", widget: "datetime" }
+      - { label: "Categoría", name: "category", widget: "hidden", default: "cine" }
+      - { label: "Imagen", name: "heroImage", widget: "image", required: false }
+      - { label: "Contenido", name: "body", widget: "markdown" }
