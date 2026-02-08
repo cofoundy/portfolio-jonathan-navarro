@@ -17,12 +17,24 @@ import { siteConfig } from "../config";
     <!-- Photo -->
     <div class="relative group">
       <div class="absolute -inset-1 bg-white/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-      <img
-        src={`${import.meta.env.BASE_URL}/profile.png`}
-        alt={siteConfig.name}
-        class="relative w-64 h-80 lg:w-80 lg:h-96 object-cover grayscale hover:grayscale-0 transition-all duration-700"
-        loading="eager"
-      />
+      <picture>
+        <source 
+          media="(max-width: 768px)" 
+          srcset="/profile-sm.webp"
+          type="image/webp"
+        />
+        <source 
+          srcset="/profile.webp"
+          type="image/webp"
+        />
+        <img
+          src="/profile.webp"
+          alt={siteConfig.name}
+          class="relative w-64 h-80 lg:w-80 lg:h-96 object-cover grayscale hover:grayscale-0 transition-all duration-700"
+          loading="eager"
+          decoding="async"
+        />
+      </picture>
     </div>
 
     <!-- Content -->
@@ -37,7 +49,7 @@ import { siteConfig } from "../config";
       </h1>
 
       <p class="mt-8 text-white/60 text-lg leading-relaxed animate-fade-in animation-delay-400">
-        {siteConfig.aboutMe}
+        <Fragment set:html={siteConfig.aboutMe} />
       </p>
 
       <!-- Social links -->

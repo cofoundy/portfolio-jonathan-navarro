@@ -1,0 +1,91 @@
+---
+import { getCollection, render } from "astro:content";
+import { siteConfig } from "../../config";
+import "../../styles/global.css";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const categoryLabel = post.data.category === "videojuegos" ? "🎮 Videojuegos" : "🎬 Cine";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>{post.data.title} — {siteConfig.name}</title>
+    <meta name="description" content={post.data.description} />
+  </head>
+  <body class="bg-black text-white antialiased">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/5">
+      <div class="container mx-auto px-8 py-4 flex items-center justify-between">
+        <a href="/" class="text-white font-bold tracking-tight">JN</a>
+        <div class="flex items-center gap-8">
+          <a href="/" class="text-white/60 hover:text-white transition-colors text-sm tracking-wide">Inicio</a>
+          <a href="/blog" class="text-white/60 hover:text-white transition-colors text-sm tracking-wide">Críticas</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-24 pb-16">
+      <article class="container mx-auto px-8 max-w-3xl">
+
+        <div class="mb-12">
+          <a href="/blog" class="text-white/40 text-sm hover:text-white transition-colors mb-6 inline-flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Volver a Críticas
+          </a>
+
+          <p class="text-white/40 text-sm uppercase tracking-wider mt-6 mb-2">
+            {categoryLabel} · {post.data.pubDate.toLocaleDateString("es-PE", { year: "numeric", month: "long", day: "numeric" })}
+          </p>
+          <h1 class="text-3xl lg:text-5xl font-bold text-white tracking-tight mb-4">{post.data.title}</h1>
+          <p class="text-white/60 text-lg">{post.data.description}</p>
+        </div>
+
+        {post.data.heroImage && (
+          <img
+            src={post.data.heroImage}
+            alt={post.data.title}
+            class="w-full rounded-lg mb-12"
+          />
+        )}
+
+        <div class="prose prose-invert prose-lg max-w-none
+          prose-headings:text-white prose-headings:font-bold
+          prose-p:text-white/70 prose-p:leading-relaxed
+          prose-a:text-white prose-a:underline prose-a:underline-offset-4
+          prose-strong:text-white
+          prose-blockquote:border-white/20 prose-blockquote:text-white/60
+          prose-code:text-white/80 prose-code:bg-neutral-800 prose-code:px-1 prose-code:rounded
+        ">
+          <Content />
+        </div>
+
+      </article>
+    </main>
+
+    <footer class="bg-black border-t border-white/5 py-8">
+      <div class="container mx-auto px-8 text-center">
+        <p class="text-white/30 text-sm">© {new Date().getFullYear()} {siteConfig.name}</p>
+      </div>
+    </footer>
+  </body>
+</html>

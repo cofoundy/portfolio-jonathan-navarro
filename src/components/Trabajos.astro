@@ -40,64 +40,97 @@ import { siteConfig } from "../config";
       ))}
     </div>
 
-    <!-- Fotografías -->
+    <!-- Fotografías — Galería por categoría -->
     <div class="mb-32">
       <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-4">
         <span class="w-12 h-px bg-white/20"></span>
         FOTOGRAFÍAS
       </h3>
-      
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        <!-- Placeholder images - will be replaced with actual photos from Drive -->
-        <div class="aspect-square bg-neutral-900 rounded overflow-hidden group cursor-pointer">
-          <div class="w-full h-full flex items-center justify-center text-white/20">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
+
+      <!-- Modelo (4 fotos — portrait 2:3) -->
+      <div class="mb-12">
+        <p class="text-white/40 text-sm tracking-[0.2em] uppercase mb-4">Modelo</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+          <div class="group relative overflow-hidden rounded-lg">
+            <img src="/fotos/modelo-1.webp" alt="Sesión modelo 1" class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="group relative overflow-hidden rounded-lg">
+            <img src="/fotos/modelo-2.webp" alt="Sesión modelo 2" class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="group relative overflow-hidden rounded-lg">
+            <img src="/fotos/modelo-3.webp" alt="Sesión modelo 3" class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="group relative overflow-hidden rounded-lg">
+            <img src="/fotos/modelo-4.webp" alt="Sesión modelo 4" class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" loading="lazy" />
           </div>
         </div>
-        <div class="aspect-square bg-neutral-900 rounded overflow-hidden"></div>
-        <div class="aspect-square bg-neutral-900 rounded overflow-hidden"></div>
-        <div class="aspect-square bg-neutral-900 rounded overflow-hidden"></div>
       </div>
-      
-      <p class="text-white/40 text-sm mt-6 text-center">
-        <a 
-          href="https://drive.google.com/drive/folders/1sZM7TxoHxywMIW3V6-PIzynwzXAwPIWv" 
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-white transition-colors underline underline-offset-4"
-        >
-          Ver galería completa →
-        </a>
-      </p>
+
+      <!-- Eventos (2 fotos — portrait 2:3) -->
+      <div class="mb-12">
+        <p class="text-white/40 text-sm tracking-[0.2em] uppercase mb-4">Eventos</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+          <div class="group relative overflow-hidden rounded-lg">
+            <img src="/fotos/eventos-1.webp" alt="Evento 1" class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="group relative overflow-hidden rounded-lg">
+            <img src="/fotos/eventos-2.webp" alt="Evento 2" class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Taller (2 fotos — landscape 3:2) -->
+      <div>
+        <p class="text-white/40 text-sm tracking-[0.2em] uppercase mb-4">Taller</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <div class="group relative overflow-hidden rounded-lg">
+            <img src="/fotos/taller-1.webp" alt="Taller 1" class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="group relative overflow-hidden rounded-lg">
+            <img src="/fotos/taller-2.webp" alt="Taller 2" class="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" loading="lazy" />
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Edición -->
+    <!-- Reels / Edición — Drive embeds -->
     <div class="mb-32">
       <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-4">
         <span class="w-12 h-px bg-white/20"></span>
-        EDICIÓN
+        REELS — GRABACIÓN Y EDICIÓN
       </h3>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="aspect-video bg-neutral-900 rounded-lg overflow-hidden flex items-center justify-center text-white/20">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-          </svg>
+        <!-- Flash - Monomics -->
+        <div>
+          <div class="aspect-[9/16] max-w-sm mx-auto md:mx-0 bg-neutral-900 rounded-lg overflow-hidden">
+            <iframe
+              src="https://drive.google.com/file/d/16MPw0oY6wFfsYzgIZ9x1-tKSVNdM2TYH/preview"
+              class="w-full h-full"
+              allow="autoplay"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <p class="text-white font-medium mt-3">Flash — Monomics</p>
+          <p class="text-white/40 text-sm">Grabación y edición</p>
+        </div>
+
+        <!-- Bámbola Vestidos -->
+        <div>
+          <div class="aspect-[9/16] max-w-sm mx-auto md:mx-0 bg-neutral-900 rounded-lg overflow-hidden">
+            <iframe
+              src="https://drive.google.com/file/d/1eA8FU7M1jEk-bK6VGrKJWIhQ92aeHyUA/preview"
+              class="w-full h-full"
+              allow="autoplay"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <p class="text-white font-medium mt-3">Bámbola Vestidos</p>
+          <p class="text-white/40 text-sm">Grabación y edición</p>
         </div>
       </div>
-      
-      <p class="text-white/40 text-sm mt-6 text-center">
-        <a 
-          href="https://drive.google.com/drive/folders/1yjXMdkq-0ugpr00FQMCbZt8kXNX6ovCJ" 
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-white transition-colors underline underline-offset-4"
-        >
-          Ver trabajos de edición →
-        </a>
-      </p>
     </div>
 
     <!-- Videojuegos -->
@@ -115,11 +148,22 @@ import { siteConfig } from "../config";
             rel="noopener noreferrer"
             class="group block bg-neutral-900 rounded-lg overflow-hidden hover:bg-neutral-800 transition-colors"
           >
-            <div class="aspect-video bg-neutral-800 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white/20 group-hover:text-white/40 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+            <div class="aspect-video bg-neutral-800 relative overflow-hidden">
+              {game.imagen ? (
+                <img
+                  src={game.imagen}
+                  alt={game.nombre}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+              )}
             </div>
             <div class="p-6">
               <h4 class="text-xl font-bold text-white mb-2 group-hover:text-white/80 transition-colors">

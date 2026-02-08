@@ -35,6 +35,35 @@ html {
   background: #444;
 }
 
+/* Viewfinder scanline */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.viewfinder-scanline {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 45%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 55%,
+    transparent 100%
+  );
+  animation: scanline 4s ease-in-out infinite;
+}
+
+.viewfinder-container:hover .viewfinder-scanline {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 45%,
+    rgba(255, 255, 255, 0.06) 50%,
+    transparent 55%,
+    transparent 100%
+  );
+}
+
 /* Focus styles */
 a:focus-visible,
 button:focus-visible {

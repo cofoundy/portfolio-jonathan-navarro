@@ -10,10 +10,11 @@ import { siteConfig } from "../config";
       <!-- Photo -->
       <div class="mb-12">
         <img
-          src={`${import.meta.env.BASE_URL}/profile.png`}
+          src="/profile-sm.webp"
           alt={siteConfig.name}
           class="w-32 h-40 object-cover mx-auto grayscale"
           loading="lazy"
+          decoding="async"
         />
       </div>
 

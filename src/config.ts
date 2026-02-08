@@ -23,14 +23,14 @@ export const siteConfig = {
   },
 
   aboutMe:
-    "Bachiller en Comunicación Audiovisual por la PUCP con experiencia en producción audiovisual, fotografía y desarrollo de videojuegos. Mi cortometraje 'Réquiem' fue proyectado en Cineplanet a nivel nacional y nominado en el Festival Render. He liderado equipos en Lima Game Jam desarrollando videojuegos en 48 horas.",
+    "<strong>Bachiller en Comunicación Audiovisual</strong> por la <strong>PUCP</strong> con experiencia en producción audiovisual, fotografía y desarrollo de videojuegos. Mi cortometraje '<strong>Réquiem</strong>' fue proyectado en <strong>Cineplanet</strong> a nivel nacional y nominado en el <strong>Festival Render</strong>. He liderado equipos en Lima Game Jam desarrollando videojuegos en 48 horas.",
 
   // === TRABAJOS ===
   trabajos: {
     cortometrajes: [
       {
         nombre: "Réquiem",
-        descripcion: "Cortometraje de ficción proyectado en Cineplanet (Lima, Puno, Cusco, Ica, Ayacucho, Lambayeque). Nominado en Festival Render. Seleccionado en Competencia Perú Emergente - Festival de Cine Al Este.",
+        descripcion: "Cortometraje de ficción proyectado en <strong>Cineplanet</strong> (Lima, Puno, Cusco, Ica, Ayacucho, Lambayeque). Nominado en <strong>Festival Render</strong>. Seleccionado en <strong>Competencia Perú Emergente</strong> - Festival de Cine Al Este.",
         rol: "Producción",
         videoUrl: "https://drive.google.com/file/d/12e9Nm551_d3V3aWZVPTQcxElu5SuBFqe/preview",
         thumbnail: "/requiem-thumb.jpg",
@@ -56,13 +56,13 @@ export const siteConfig = {
         nombre: "Bubbles Up",
         url: "https://democrates-n.itch.io/bubbles-up",
         rol: "Producción y Game Design",
-        imagen: "/bubbles-up.png",
+        imagen: "/bubbleup.webp",
       },
       {
         nombre: "Biofusion",
         url: "https://dreamer-p6.itch.io/biofusion",
         rol: "Producción y Game Design",
-        imagen: "/biofusion.png",
+        imagen: "/biofusion.webp",
       },
     ],
   },
@@ -99,8 +99,8 @@ export const siteConfig = {
       title: "Asistente de Marketing y Comunicaciones",
       dateRange: "Enero 2024 - Presente",
       bullets: [
-        "Gestión de redes sociales con incremento de 15% en alcance mensual",
-        "Diseño de campañas digitales con aumento de 20% en tasa de clics",
+        "Gestión de redes sociales con incremento de <strong>15% en alcance</strong> mensual",
+        "Diseño de <strong>campañas digitales</strong> con aumento de <strong>20% en tasa de clics</strong>",
         "Elaboración de presentaciones estratégicas mensuales",
       ],
     },
@@ -109,8 +109,8 @@ export const siteConfig = {
       title: "Voluntario - Marketing, Eventos, RRHH",
       dateRange: "Marzo 2025 - Presente",
       bullets: [
-        "Fotografía de eventos de videojuegos en Ministerio de Cultura",
-        "Cobertura de eventos OPEN PUCP",
+        "Fotografía de eventos de videojuegos en <strong>Ministerio de Cultura</strong>",
+        "Cobertura de eventos <strong>OPEN PUCP</strong>",
         "Gestión de recursos humanos del voluntariado",
       ],
     },
@@ -119,7 +119,7 @@ export const siteConfig = {
       title: "Creador de Contenido",
       dateRange: "Marzo 2025 - Junio 2025",
       bullets: [
-        "Creación de contenido para medio informativo sobre Nintendo",
+        "Creación de contenido para medio informativo sobre <strong>Nintendo</strong>",
       ],
     },
   ],
@@ -130,9 +130,9 @@ export const siteConfig = {
       degree: "Bachiller en Comunicación Audiovisual",
       dateRange: "2018 - 2024",
       achievements: [
-        "Cortometraje Réquiem nominado en Festival Render",
-        "Líder de equipo en Lima Game Jam",
-        "Proyecto Haus Labs publicado en PubliPUCP",
+        "Cortometraje <strong>Réquiem</strong> nominado en <strong>Festival Render</strong>",
+        "Líder de equipo en <strong>Lima Game Jam</strong>",
+        "Proyecto <strong>Haus Labs</strong> publicado en <strong>PubliPUCP</strong>",
       ],
     },
   ],
