@@ -34,7 +34,7 @@ import { siteConfig } from "../config";
           <div class="max-w-3xl">
             <h4 class="text-2xl font-bold text-white mb-2">{corto.nombre}</h4>
             <p class="text-white/40 text-sm uppercase tracking-wider mb-4">Rol: {corto.rol}</p>
-            <p class="text-white/60 leading-relaxed">{corto.descripcion}</p>
+            <p class="text-white/60 leading-relaxed"><Fragment set:html={corto.descripcion} /></p>
           </div>
         </div>
       ))}
