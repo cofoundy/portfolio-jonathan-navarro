@@ -4,8 +4,8 @@ backend:
   branch: main
   auth_type: pkce
   base_url: https://auth.decapbridge.com
-  auth_endpoint: /sites/SITE-ID/pkce
-  auth_token_endpoint: /sites/SITE-ID/token
+  auth_endpoint: /sites/e10247b0-1a0f-4fce-bea8-a515c0bb0a67/pkce
+  auth_token_endpoint: /sites/e10247b0-1a0f-4fce-bea8-a515c0bb0a67/token
   gateway_url: https://gateway.decapbridge.com
 
 site_url: https://jonathannavarrom.lat
