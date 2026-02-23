@@ -1,5 +1,5 @@
 ---
-title: Rocky 1
+title: Crítica de Rocky 1
 description: "Rocky se ha consolidado como un símbolo del cine motivacional de
   los años setenta. Aunque el tiempo la ha convertido en un clásico
   indiscutible, mi primer encuentro con la película ocurre recién ahora, lo que
