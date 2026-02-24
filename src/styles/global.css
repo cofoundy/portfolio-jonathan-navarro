@@ -64,6 +64,12 @@ html {
   );
 }
 
+/* Blog post prose */
+.prose p {
+  text-align: justify;
+  margin-bottom: 1.5em;
+}
+
 /* Focus styles */
 a:focus-visible,
 button:focus-visible {
